@@ -1,0 +1,13 @@
+﻿@model TwilioDemo.Models.Number
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Please enter a number</h2>
+@using (Html.BeginForm("SendSms", "Home", new {ReturnUrl = ViewBag.ReturnUrl}, FormMethod.Post, new {role = "form"}))
+{
+    <label>number format +92-323-4100831</label><br/>
+    @Html.TextBoxFor(x => x.PhoneNumber, new {required=true})
+    <input type="submit" value="Send Sms"/>
+}
